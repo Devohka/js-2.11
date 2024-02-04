@@ -1,0 +1,8 @@
+{
+    "name": " nameUser.value",
+    "surname": "surNameUser.value",
+    "age": "ageUser.value",
+    "course": "courseUser.value",
+   "optional": "optionalUser.value",
+   "coursesList": ""
+}

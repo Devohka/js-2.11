@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <input type="text" placeholder="ім'я" data-name>
+    <input type="text" placeholder="прізвище" data-surname>
+    <input type="text" placeholder="вік" data-age>
+    <input type="text" placeholder="курс" data-course>
+    <input type="text" placeholder="факультет" data-optional>
+    <input type="text" placeholder="список курсів" data-courses>
+ <button type="button" class="btn">Надіслати </button>
+
+
+
+    <button class="button" data-action="open-modal">Змінити</button>
+    <div class="backdrop js-backdrop">
+        <div class="modal">
+            <h2>Змінити Впишіть всі зміни і не зміне </h2>
+            <input type="text" placeholder="ім'я" data-nameRemade>
+            <input type="text" placeholder="прізвище" data-surnameRemade>
+            <input type="text" placeholder="вік" data-ageRemade>
+            <input type="text" placeholder="курс" data-courseRemade>
+            <input type="text" placeholder="факультет" data-optionalRemade>
+            <input type="text" placeholder="список курсів" data-coursesRemade>
+            <button type="button" class="btn-remade">Надіслати </button>
+            <button type="button" class="button" data-action="close-modal">Закрити</button>
+        </div>
+    </div>
+
+   
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
