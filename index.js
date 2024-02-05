@@ -21,6 +21,12 @@ function closeModal() {
     document.body.classList.remove("show-modal");
 };
 
+const card = document.querySelector(".card");
+
+
+
+
+
 
 
 btn.addEventListener("click", () => {
@@ -48,8 +54,13 @@ const coursesListUserRemade = document.querySelector("[data-coursesRemade]");
 
 const btnRemade = document.querySelector(".btn-remade");
 
+btn.addEventListener("click", () => {
+    card.style.display = "block";
+    nameUserRemade.value = nameUser.value;
+});
+
 btnRemade.addEventListener("click", () => {
-    const user = {
+    const userRemade = {
         name: nameUserRemade.value,
         surname: surNameUserRemade.value,
         age: ageUserRemade.value,
