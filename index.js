@@ -24,52 +24,64 @@ function closeModal() {
 const card = document.querySelector(".card");
 
 
-
-
-
-
+const user = {
+    name: "",
+    surname: "",
+    age: "",
+    course: "",
+    optional: "",
+    coursesList: "",
+};
 
 btn.addEventListener("click", () => {
-    const user = {
-        name: nameUser.value,
-        surname: surNameUser.value,
-        age: ageUser.value,
-        course: courseUser.value,
-       optional: optionalUser.value,
-       coursesList: coursesListUser.value,
-    };
+    user.name = nameUser.value;
+    user.surname = surNameUser.value;
+    user.age = ageUser.value;
+    user.course = courseUser.value;
+    user.optional = optionalUser.value;
+    user.coursesList = coursesListUser.value;
+
+
     const openJson = JSON.stringify(user);
-    
+
     const json = JSON.parse(openJson);
-    console.table(json);
+    const cardsMarkUp = createCardMarkUp(user);
+    cardEl.insertAdjacentHTML("afterbegin", cardsMarkUp);
 });
-
-
-const nameUserRemade = document.querySelector("[data-nameRemade]");
-const surNameUserRemade = document.querySelector("[data-surnameRemade]");
-const ageUserRemade = document.querySelector("[data-ageRemade]");
-const courseUserRemade = document.querySelector("[data-courseRemade]");
-const optionalUserRemade = document.querySelector("[data-optionalRemade]");
-const coursesListUserRemade = document.querySelector("[data-coursesRemade]");
 
 const btnRemade = document.querySelector(".btn-remade");
 
-btn.addEventListener("click", () => {
-    card.style.display = "block";
-    nameUserRemade.value = nameUser.value;
-});
 
 btnRemade.addEventListener("click", () => {
-    const userRemade = {
-        name: nameUserRemade.value,
-        surname: surNameUserRemade.value,
-        age: ageUserRemade.value,
-        course: courseUserRemade.value,
-       optional: optionalUserRemade.value,
-       coursesList: coursesListUserRemade.value,
-    };
+    user.name = nameUser.value;
+    user.surname = surNameUser.value;
+    user.age = ageUser.value;
+    user.course = courseUser.value;
+    user.optional = optionalUser.value;
+    user.coursesList = coursesListUser.value;
+
+
     const openJson = JSON.stringify(user);
-    
+
     const json = JSON.parse(openJson);
-    console.table(json);
+
 });
+
+
+
+const cardEl = document.querySelector(".card");
+
+function createCardMarkUp(user) {
+    return `<li class="info-card">
+        <div class="info-meta">
+          <p>ім'я: ${user.name}</p>
+          <p>прізвище: ${user.surname}</p>
+          <p>вік: ${user.age}</p>
+          <p>курс: ${user.course}</p>
+          <p>факультет: ${user.optional}</p>
+          <p>список курсів: ${user.coursesList}</p>
+           <button class="button" data-action="open-modal">Змінити</button>
+           <button class="button" data-action="open-modal">Видалити</button>
+        </div>
+       </li>`;
+};
